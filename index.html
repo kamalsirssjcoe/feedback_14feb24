@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>
+		Feedback App by Kamal Sir
+	</title>
+	<style>
+		* { font-size: 50px;	 font-family: Arial;}
+		body { background-color:lightyellow;}
+		h1 {background-color:black; color:white; width:60%; border-radius:40px;}
+		input[type=radio] { width: 1.5%; height: 0.5em; }
+	</style>
+	<script>
+		function show()
+		{
+		event.preventDefault();
+		let name = document.getElementById("id_name");
+		let excellent = document.getElementById("id_excellent");
+		let superb = document.getElementById("id_superb");
+		let fantastic = document.getElementById("id_fantastic");
+		let msg = document.getElementById("id_msg");
+
+		let feedback = "";
+		if (excellent.checked)		feedback = "Excellent";
+		else if (superb.checked)	feedback = "Superb";
+		else				feedback = "Fantastic";
+
+		let ans = " name = " + name.value + " feedback " + feedback;
+		msg.innerHTML = ans;
+
+		}
+	</script>
+</head>
+<body>
+<center>
+	<h1> Feedback App </h1>
+	<form onsubmit="show()">	
+	<input type="text" placeholder="enter ur name" id="id_name"/>
+	<br><br>
+	<input type="radio" name="f" id="id_excellent" checked=true/> Excellent
+	<input type="radio" name="f" id="id_superb" /> Superb
+	<input type="radio" name="f" id="id_fantastic" /> Fantastic
+	<br><br>
+	<input type="submit" />
+	</form>
+	<h2 id="id_msg"/>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
